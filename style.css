@@ -7,3 +7,25 @@
 img {
     width: 100%;
 }
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+}
+
+canvas{
+    border: 1px solid black;
+    width: 650px;
+    height: 650px;
+}
+
+.ukjord{
+    height: 325px;
+    width: 1000px;
+}
+
+.tastatur{
+    height: 325px;
+    width: 1000px;
+}
