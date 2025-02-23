@@ -14,7 +14,18 @@ const canvas = document.getElementById("man")
 
 const ctx = canvas.getContext("2d");
 
-const feilContainer = document.getElementById("feilBok")
+const feilContainer = document.getElementById("feilCont")
+
+
+
+function visOrd() {
+    const display = valgtOrd.split('').map(bokstav => 
+        gjettBok.includes(bokstav) ? bokstav : "_"
+    ).join(' ');
+    document.getElementById("ukjOrd").textContent = display;
+}
+
+visOrd()
 
 
 function klikk(event) {
@@ -22,7 +33,9 @@ function klikk(event) {
     const bokstav = event.key.toLowerCase()
     if (valgtOrd.includes(bokstav)) {
         console.log("Ordet inneholder", bokstav)
-        gjettBok.push(bokstav)
+        if (!gjettBok.includes(bokstav)){
+            gjettBok.push(bokstav)
+        }
         console.log("Riktige bokstaver", gjettBok)
 
         for (let i = 0; i < valgtOrd.length; i++) {
@@ -34,12 +47,16 @@ function klikk(event) {
     }
     else {
         console.log(bokstav, "finnes ikke i ordet")
-        feilBok.push(bokstav)
+        if (!feilBok.includes(bokstav)){
+            feilBok.push(bokstav)
+        }
         console.log("feil bokstaver", feilBok)
         brukteLiv++
         console.log(brukteLiv)
         feilContainer.innerHTML = feilBok
         tegnMann()
     }
+    visOrd()
 }
+
 

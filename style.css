@@ -17,15 +17,20 @@ body{
 canvas{
     border: 1px solid black;
     width: 800px;
+    height: 800px;
+}
+
+.ukjOrd{
     height: 400px;
-}
-
-.ukjord{
-    height: 325px;
     width: 1000px;
 }
 
-.tastatur{
-    height: 325px;
-    width: 1000px;
+#ukjOrd{
+    font-size: 60px;
+}
+
+#feilCont{
+    color: red;
+    font-size: 50px;
+    width: 100px;
 }
