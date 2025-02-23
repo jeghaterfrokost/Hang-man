@@ -14,6 +14,8 @@ const canvas = document.getElementById("man")
 
 const ctx = canvas.getContext("2d");
 
+const feilContainer = document.getElementById("feilBok")
+
 
 function klikk(event) {
     console.log("Du skrev:", event.key)
@@ -36,24 +38,8 @@ function klikk(event) {
         console.log("feil bokstaver", feilBok)
         brukteLiv++
         console.log(brukteLiv)
+        feilContainer.innerHTML = feilBok
         tegnMann()
     }
 }
 
-function tegnMann(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(10, 240); ctx.lineTo(100, 240);
-    ctx.moveTo(55, 240); ctx.lineTo(55, 20); 
-    ctx.lineTo(140, 20); 
-    ctx.lineTo(140, 40); 
-    ctx.stroke();
-
-    if (brukteLiv > 0) { ctx.beginPath(); ctx.arc(140, 55, 15, 0, Math.PI * 2); ctx.stroke(); }
-    if (brukteLiv > 1) { ctx.moveTo(140, 70); ctx.lineTo(140, 120); ctx.stroke(); } 
-    if (brukteLiv > 2) { ctx.moveTo(140, 85); ctx.lineTo(120, 110); ctx.stroke(); } 
-    if (brukteLiv > 3) { ctx.moveTo(140, 85); ctx.lineTo(160, 110); ctx.stroke(); } 
-    if (brukteLiv > 4) { ctx.moveTo(140, 120); ctx.lineTo(120, 150); ctx.stroke(); } 
-    if (brukteLiv > 5) { ctx.moveTo(140, 120); ctx.lineTo(160, 150); ctx.stroke(); } 
-}
